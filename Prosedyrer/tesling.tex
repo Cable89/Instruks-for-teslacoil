@@ -1,0 +1,46 @@
+\subsection{Tesling}
+\begin{todolist}
+    \setlength{\itemsep}{2pt}
+    \iftoggle{INTERN}{
+        % Intern
+        \item{Sørg for at Hanskeholder har på hanske og er klar}
+    }{
+        % Ekstern
+    }
+    \item{Sørg for at sikkerhetssonen er tom for uvedkommende}
+    \item{Sørg for at ingen i publikum har pacemaker}
+    \item{Sørg for at \pulsformer operatør er klar}
+    \item{(\Pulsformer { }og \signalkilde { }er på)}
+    \item{Sørg for at Driveroperatør er klar}
+    \item{(Driveren er av)}
+    \item{Sørg for at Nødstopper er klar}
+    \item{(Nødstoppbryteren er trykket inn)}
+    \item{Koble spoleriggen i driveren}
+    \item{Trekk ut nødstoppbryteren}
+    \item{Slå på driveren}
+    \iftoggle{INTERN}{
+        % Intern
+        \item{Sørg for at Hanskeholder er klar}
+    }{
+        % Ekstern
+    }
+    \item{Spill av lydfil på \signalkilde}
+    \iftoggle{INTERN}{
+        % Intern
+        \item{Observer overslag fra topload til hanske eller corona}
+    }{
+        % Ekstern
+        \item{Observer overslag fra topload til jordingspunkt eller corona}
+    }
+    \item{Fininstill dutycycle om nødvendig}
+    \item{Nyt, til lydfilen er ferdig eller stoppet}
+    \item{Slå av driveren}
+    \item{Trykk inn nødstoppbryteren}
+    \item{Trekk ut kabelen til spoleriggen}
+    \iftoggle{INTERN}{
+        % Intern
+        \item{Ta på toploaden med hansken (jording av kretsen)}
+    }{
+        % Ekstern
+    }
+\end{todolist}

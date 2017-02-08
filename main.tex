@@ -1,0 +1,139 @@
+%\documentclass[12pt,Norwegian,a4paper,titlepage]{article}
+\documentclass[17pt,Norwegian,a4paper,titlepage]{extarticle}
+\title{Autopilot}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, bottom=4.0cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}                   
+\usepackage{graphicx}  
+\usepackage{subfig}         
+\usepackage{listings}             
+\usepackage{float}
+\usepackage{lastpage}
+\usepackage[]{natbib} %referanser
+\usepackage{cleveref}
+\usepackage{makeidx}  
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[norsk]{babel}
+\usepackage{graphicx}			%Figurer
+\usepackage{fancyhdr}			%Fancy headere
+\usepackage{etoolbox}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+
+\newcommand{\fakesection}[1]{%
+  \par\refstepcounter{section}% Increase section counter
+  \sectionmark{#1}% Add section mark (header)
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}% Add section to ToC
+  % Add more content here, if needed.
+}
+
+\pagestyle{fancy}
+\fancyhead{}
+
+\makeindex
+
+\tolerance = 5000
+\hbadness = \tolerance
+\pretolerance = 2000
+
+%----------------------------------------%
+%               Variabler                %
+%----------------------------------------%
+\newcommand{\currentrev}{1}
+
+\newtoggle{INTERN}
+\toggletrue{INTERN}
+%\togglefalse{INTERN}
+\iftoggle{INTERN}{
+    % Intern
+    \newcommand{\Signalkilde}{Internet}
+    \newcommand{\signalkilde}{internet}
+    \newcommand{\Pulsformer}{Fuck}
+    \newcommand{\pulsformer}{fuck}
+}{
+    % Ekstern
+    \newcommand{\Signalkilde}{Signalkilde}
+    \newcommand{\signalkilde}{signalkilde}
+    \newcommand{\Pulsformer}{Pulsformer}
+    \newcommand{\pulsformer}{pulsformer}
+}
+
+%----------------------------------------%
+
+\begin{document}
+
+  \input{Forside}
+  \cfoot{}
+  
+  \newpage
+  \thispagestyle{empty}
+  \tableofcontents
+
+  \newpage
+
+  \pagenumbering{arabic}
+  \lhead{\leftmark}
+  \rhead{Instruks for Teslacoil}
+  \cfoot{Side \thepage\ av \pageref{LastPage}}
+  \lfoot{rev. 1}
+  \iftoggle{INTERN}{
+    % Intern
+  \rfoot{INTERN}
+    }{
+    % Ekstern
+  }
+  
+  \input{Overordnet}
+  \newpage
+  
+  \fakesection{Instrukser}
+  \newpage
+  \input{Instrukser/overtesler}
+  \newpage
+  \iftoggle{INTERN}{
+    % Intern
+    \input{Instrukser/hanskeholder}
+    \newpage
+    }{
+    % Ekstern
+  }
+  \input{Instrukser/fuckoperator}
+  \newpage
+  \input{Instrukser/driveroperator}
+  \newpage
+  \input{Instrukser/nodstopper}
+  \newpage
+  \input{Instrukser/vakt}
+  \newpage
+  
+  \fakesection{Prosedyrer}
+  \newpage
+  \input{Prosedyrer/oppkobling}
+  \newpage
+  \input{Prosedyrer/tesling}
+  \newpage
+  \input{Prosedyrer/nedkobling}
+  \newpage
+
+  \fakesection{Sjekklister}
+  \newpage
+  \input{Sjekklister/internet_fuck}
+  \newpage
+  \input{Sjekklister/driver}
+  \newpage
+  \input{Sjekklister/spolerigg}
+  \newpage
+  
+  \input{revisjoner}
+  
+\end{document}
